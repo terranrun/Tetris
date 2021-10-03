@@ -16,5 +16,12 @@ namespace Ttetris
             Console.WriteLine(c);
         }
 
+        public Point(int a, int b, char sym)
+        {
+            x = a;
+            y = b;
+            c = sym;
+        }
+
     }
 }

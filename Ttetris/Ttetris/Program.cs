@@ -6,13 +6,29 @@ namespace Ttetris
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!!!!4545");
-            Console.WriteLine("Hello World!!!!4545");
-            Console.WriteLine("Hello World!!!!4545");
-            Console.WriteLine("Hello World!!!!4545");
-            Console.WriteLine("Hello World!!!!45asdasd45");
-            Console.WriteLine("Hello World!!!!45asdasd45");
-            Console.WriteLine("Hello World!!!!45asdadfsdfdfsd");
+            Console.SetWindowSize(40, 30);
+            Console.SetBufferSize(40, 30);
+
+            int x1 = 2;
+            int y1 = 3;
+            char c1 = '*';
+
+            Drow(x1, y1, c1);
+
+            int x2 = 4;
+            int y2 = 5;
+            char c2 = '@';
+
+            Drow(x2, y2, c2);
+
+
+            Console.ReadLine();
+        }
+
+        static void Drow(int x, int y, char c)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(c);
         }
     }
 }

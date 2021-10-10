@@ -6,21 +6,27 @@ namespace Ttetris
 {
     public class Point
     {
-        public int x;
-        public int y;
-        public char c;
+        public int X { get; set; }
+        public int Y { get; set; }
+        public char C { get; set; }
 
         public void Draw()
         {
-            Console.SetCursorPosition(x, y);
-            Console.WriteLine(c);
+            Console.SetCursorPosition(X, Y);
+            Console.WriteLine(C);
+            Console.SetCursorPosition(0, 0);
         }
-
+        public Point(Point p)
+        {
+            X = p.X;
+            Y = p.Y;
+            C = p.C;
+        }
         public Point(int a, int b, char sym)
         {
-            x = a;
-            y = b;
-            c = sym;
+            X = a;
+            Y = b;
+            C = sym;
         }
 
         internal void Move(Direction dir)
@@ -28,20 +34,21 @@ namespace Ttetris
             switch(dir)
             {
                 case Direction.DOWN:
-                    y += 1;
+                    Y += 1;
                     break;
                 case Direction.LEFT:
-                    x -= 1;
+                    X -= 1;
                     break;
                 case Direction.RIGHT:
-                    x += 1;
+                    X += 1;
                     break;
+
             }
         }
 
         internal void Hide()
         {
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(X, Y);
             Console.Write(" ");
         }
     }
